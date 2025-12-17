@@ -5,87 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NewGen Digital Studio</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Inline CSS Test -->
-  <style>
-    body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: white; }
-    h1 { font-size: 3rem; text-align: center; margin-top: 50vh; }
-  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">NewGen Digital Studio</div>
     <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact">Get a Quote</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
+  <!-- HERO -->
+  <section id="home" class="hero">
     <div class="hero-content">
-      <h1 class="animated-text">Elevate Your Digital Presence</h1>
-      <p>Professional web solutions tailored to your business</p>
-      <a href="#services" class="btn">Explore Services</a>
+      <h1>Premium websites built for growth</h1>
+      <p>
+        Mobile-friendly, modern websites designed so anyone can navigate
+        effortlessly — on any device.
+      </p>
+      <a href="#contact" class="btn">Get a Quote & Start Your Website</a>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
+  <!-- SERVICES -->
+  <section id="services" class="section light">
     <h2>Our Services</h2>
-    <div class="service-cards">
-      <div class="card">
-        <h3>Web Design</h3>
-        <p>Modern, responsive websites that look amazing on every device.</p>
-      </div>
-      <div class="card">
-        <h3>SEO Optimization</h3>
-        <p>Boost your search ranking and attract more clients.</p>
-      </div>
-      <div class="card">
-        <h3>Custom Apps</h3>
-        <p>Interactive applications that engage your audience.</p>
-      </div>
+
+    <div class="service-grid">
+      <div class="service-card">Website Design</div>
+      <div class="service-card">Website Redesign</div>
+      <div class="service-card">Mobile Optimization</div>
+      <div class="service-card">Landing Pages</div>
+      <div class="service-card">Branding & Logo Setup</div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-items">
-      <div class="portfolio-card">Project 1</div>
-      <div class="portfolio-card">Project 2</div>
-      <div class="portfolio-card">Project 3</div>
+  <!-- PORTFOLIO / PRICING TIERS -->
+  <section id="portfolio" class="section">
+    <h2>Website Packages</h2>
+
+    <div class="portfolio-grid">
+
+      <!-- $500 -->
+      <div class="portfolio-card">
+        <h3>$500 Website</h3>
+        <p class="subtitle">Simple & Professional</p>
+        <ul>
+          <li>✔ Home, About, Contact</li>
+          <li>✔ Clean & basic design</li>
+          <li>✔ Mobile-friendly</li>
+          <li>✔ Fast load time</li>
+        </ul>
+        <p class="desc">
+          Perfect for small businesses that need a clean online presence.
+        </p>
+      </div>
+
+      <!-- $1200 -->
+      <div class="portfolio-card highlight">
+        <h3>$1,200 Website</h3>
+        <p class="subtitle">Growth-Focused</p>
+        <ul>
+          <li>✔ 3+ pages</li>
+          <li>✔ Subtle animations</li>
+          <li>✔ Gallery or services section</li>
+          <li>✔ Social media integration</li>
+        </ul>
+        <p class="desc">
+          Designed for businesses ready to grow and convert visitors.
+        </p>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="portfolio-card premium">
+        <h3>Premium / Custom</h3>
+        <p class="subtitle">High-End Experience</p>
+        <ul>
+          <li>✔ 5+ custom pages</li>
+          <li>✔ Advanced animations</li>
+          <li>✔ Conversion-focused layout</li>
+          <li>✔ Full branding experience</li>
+        </ul>
+        <p class="desc">
+          This website is an example of our premium work.
+        </p>
+      </div>
+
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial-card">
-        <p>"NewGen Digital Studio transformed our website. Amazing work!"</p>
-        <span>- Client A</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"Professional, fast, and creative. Highly recommend!"</p>
-        <span>- Client B</span>
-      </div>
-    </div>
+  <!-- CONTACT -->
+  <section id="contact" class="section light">
+    <h2>Get a Quote</h2>
+    <p>Tell us about your project. We’ll take it from there.</p>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" disabled>
+      <input type="email" placeholder="Your Email" disabled>
+      <textarea placeholder="Tell us about your website..." disabled></textarea>
+      <button type="button" class="btn disabled">Contact Form Coming Soon</button>
+    </form>
   </section>
 
-  <!-- Contact / CTA Section -->
-  <section id="contact" class="contact">
-    <h2>Get Started Today</h2>
-    <p>Work with NewGen Digital Studio to elevate your brand.</p>
-    <a href="#" class="btn">Contact Us</a>
-  </section>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 NewGen Digital Studio. All rights reserved.</p>
   </footer>
