@@ -1,10 +1,5 @@
-// Simple scroll reveal effect
-window.addEventListener("scroll", () => {
-  document.querySelectorAll("section").forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    }
-  });
+// Smooth Scroll for "Explore Services" Button
+document.querySelector(".btn").addEventListener("click", function(e){
+  e.preventDefault();
+  document.querySelector("#services").scrollIntoView({ behavior: "smooth" });
 });
