@@ -1,37 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Demo</title>
-  <link rel="stylesheet" href="../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Demo • NewGen</title>
+  <meta name="description" content="Basic 1-page demo site for a local service business.">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
 <nav class="navbar">
-  <div class="logo">NewGen Demo</div>
+  <div class="logo">Rivera Cleaning Co.</div>
   <ul class="nav-links">
     <li><a href="../index.html">← Back</a></li>
+    <li><a class="btn small" href="tel:+15551234567">Call</a></li>
   </ul>
 </nav>
 
 <section class="hero reveal">
-  <h1>Basic Website Demo</h1>
-  <p>This is a simple 1-page website for a local business.</p>
-  <a class="btn">Call Now</a>
+  <div class="container hero-surface" style="padding:54px 22px;">
+    <h1>Spotless homes, zero stress.</h1>
+    <p>Local cleaning service with simple pricing, fast booking, and a clean one-page website that works on any phone.</p>
+
+    <div class="btn-row">
+      <a class="btn" href="tel:+15551234567">Call for a Quote</a>
+      <a class="btn ghost" href="#services">See Services</a>
+      <a class="btn ghost" href="sms:+15551234567">Text Us</a>
+    </div>
+
+    <div class="hero-badges">
+      <div class="badge">Same-week availability</div>
+      <div class="badge">Trusted team</div>
+      <div class="badge">Simple pricing</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section light reveal">
+  <div class="container">
+    <h2>Services</h2>
+    <p class="sub">A basic package keeps it simple: clear offer, clear CTA, clean layout.</p>
+
+    <div class="service-grid">
+      <div class="service-card">Standard Clean</div>
+      <div class="service-card">Deep Clean</div>
+      <div class="service-card">Move In / Out</div>
+      <div class="service-card">Airbnb Turnover</div>
+      <div class="service-card">Office Cleaning</div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="container">
+    <h2>Why clients pick us</h2>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Fast & simple</h3>
+        <p>One page. Everything a customer needs in under 10 seconds.</p>
+      </div>
+      <div class="card">
+        <h3>Mobile-first</h3>
+        <p>Buttons are big, readable, and built for thumbs.</p>
+      </div>
+      <div class="card">
+        <h3>Trust basics</h3>
+        <p>A few trust points so visitors feel safe calling.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section light reveal">
-  <h2>Services</h2>
-  <div class="service-grid">
-    <div class="service-card">Service One</div>
-    <div class="service-card">Service Two</div>
-    <div class="service-card">Service Three</div>
+  <div class="container">
+    <h2>Testimonials</h2>
+    <p class="sub">Basic demo = short, clean social proof.</p>
+
+    <div class="grid cols-3">
+      <div class="card"><h3>“On time and super professional.”</h3><p>— Local client</p></div>
+      <div class="card"><h3>“My place looked brand new.”</h3><p>— Repeat customer</p></div>
+      <div class="card"><h3>“Easy to book, easy to pay.”</h3><p>— Busy homeowner</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="contact">
+  <div class="container">
+    <h2>Get a quote</h2>
+    <p class="sub">Basic package usually uses call/text. A full form is a Growth feature.</p>
+
+    <div class="btn-row">
+      <a class="btn" href="tel:+15551234567">Call Now</a>
+      <a class="btn ghost" href="sms:+15551234567">Text Now</a>
+      <a class="btn ghost" href="mailto:hello@example.com">Email</a>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 NewGen Digital Studio</p>
+  <p>&copy; 2025 Rivera Cleaning Co. • Demo by NewGen</p>
 </footer>
 
 <script src="../script.js"></script>
