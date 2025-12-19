@@ -3,141 +3,274 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Premium Demo • Platform / Studio</title>
-  <meta name="description" content="Premium 6-page demo with platform-level structure, case studies, pricing, and a high-end experience." />
+  <title>Premium Demo • Wix-Style Platform Homepage</title>
+  <meta name="description" content="Premium demo homepage with Wix-like navigation, color sections, templates gallery, domains, SEO, ads, and marketing blocks." />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body>
+<body style="--accent:#7c3aed;">
 
 <nav class="navbar">
   <div class="nav-inner">
-    <div class="logo">Nova Platform Studio</div>
-    <button class="nav-toggle" aria-label="Open menu">Menu</button>
+    <div class="logo">
+      <span class="logo-badge" style="background:#7c3aed;">NP</span>
+      Nova Platform
+    </div>
+
     <ul class="nav-links">
-      <li><a href="../index.html">← Back</a></li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="work.html">Case Studies</a></li>
-      <li><a href="about.html">About</a></li>
+      <li class="dd">
+        <a href="#products">Products ▾</a>
+        <div class="dd-panel">
+          <div class="dd-grid">
+            <a class="dd-item" href="#templates">
+              <strong>Templates</strong>
+              <span>Browse multiple styles.</span>
+            </a>
+            <a class="dd-item" href="#domains">
+              <strong>Domains</strong>
+              <span>Buy or connect one.</span>
+            </a>
+            <a class="dd-item" href="#seo">
+              <strong>SEO</strong>
+              <span>Show up on Google.</span>
+            </a>
+            <a class="dd-item" href="#marketing">
+              <strong>Marketing</strong>
+              <span>Grow repeat business.</span>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li class="dd">
+        <a href="#solutions">Solutions ▾</a>
+        <div class="dd-panel">
+          <div class="dd-grid">
+            <a class="dd-item" href="services.html">
+              <strong>Services</strong>
+              <span>What’s included.</span>
+            </a>
+            <a class="dd-item" href="work.html">
+              <strong>Case Studies</strong>
+              <span>Proof pages.</span>
+            </a>
+            <a class="dd-item" href="pricing.html">
+              <strong>Pricing</strong>
+              <span>Value clarity.</span>
+            </a>
+            <a class="dd-item" href="contact.html">
+              <strong>Start</strong>
+              <span>Project intake.</span>
+            </a>
+          </div>
+        </div>
+      </li>
+
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="contact.html" class="btn small accent">Start</a></li>
+      <li><a href="work.html">Templates</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a class="iconbtn" href="#" aria-label="Language">🌐 EN</a>
+      <a class="iconbtn" href="work.html">View Proof</a>
+      <a class="btn small accent" href="contact.html">Get Started</a>
+    </div>
   </div>
 </nav>
 
-<header class="hero reveal" style="padding-bottom:36px;">
-  <div class="container hero-image"
-       style="background-image:url('https://images.unsplash.com/photo-1557825835-70d97c4aa567?auto=format&fit=crop&w=1800&q=70');background-size:cover;background-position:center;">
-    <div class="overlay"></div>
-    <div class="content">
-      <div class="kicker" style="color:rgba(255,255,255,.85);">Premium package demo • 6 pages</div>
-      <h1>Build a brand that feels like a platform.</h1>
-      <p>
-        This Premium demo shows what clients pay for: a multi-page system with consistent components,
-        case studies, pricing structure, and a high-end flow that makes people trust you.
-      </p>
+<header class="hero reveal" style="padding-bottom:40px;">
+  <div class="container hero-surface" style="background:radial-gradient(1200px 700px at 30% 0%, #f2eaff, #ffffff);">
+    <div class="kicker">Premium demo • platform feel • color-coded sections • photo-rich</div>
+    <h1>A premium homepage that feels like a platform.</h1>
+    <p>
+      This is the “top work” style: clear navigation, multiple product sections, templates gallery,
+      domain tools, and marketing/ads sections—presented with strong visuals and color.
+    </p>
 
-      <div class="btn-row" style="justify-content:flex-start;">
-        <a class="btn accent" href="work.html">View Case Studies</a>
-        <a class="btn ghost" href="pricing.html" style="border-color:rgba(255,255,255,.3);color:#fff;">See Pricing</a>
-        <a class="btn ghost" href="contact.html" style="border-color:rgba(255,255,255,.3);color:#fff;">Start Project</a>
-      </div>
+    <div class="btn-row">
+      <a class="btn accent" href="#templates">Browse Templates</a>
+      <a class="btn ghost" href="#domains">Find a Domain</a>
+      <a class="btn ghost" href="pricing.html">See Pricing</a>
+    </div>
 
-      <div class="badges" style="justify-content:flex-start;">
-        <div class="pill">Design system feel</div>
-        <div class="pill">6-page structure</div>
-        <div class="pill">Case studies</div>
-        <div class="pill">Pricing clarity</div>
-      </div>
+    <div class="badges">
+      <div class="pill">Drop-down nav</div>
+      <div class="pill">Templates gallery</div>
+      <div class="pill">Domains</div>
+      <div class="pill">SEO + Ads + Marketing</div>
     </div>
   </div>
 </header>
 
-<section class="section light reveal">
-  <div class="container">
-    <h2>Premium outcomes</h2>
-    <p class="sub">
-      Premium isn’t “more pages.” It’s a consistent experience that builds trust across every click.
+<section id="templates" class="section color-a reveal">
+  <div class="container" style="text-align:left;">
+    <h2>Explore templates</h2>
+    <p class="sub" style="margin-left:0;">
+      A premium site shows variety. This gallery sells the idea that you can build for different industries.
     </p>
 
-    <div class="grid cols-3">
-      <div class="card">
-        <h3>Brand-level polish</h3>
-        <p>Typography, spacing, and layout rules stay consistent across pages.</p>
+    <div class="templates">
+      <div class="tpl">
+        <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=70');"></div>
+        <div class="cap">
+          <strong>Professional Services</strong>
+          <span>Authority + trust + clean CTAs.</span>
+        </div>
       </div>
-      <div class="card">
-        <h3>Proof built-in</h3>
-        <p>Case studies tell the story: problem → solution → results.</p>
+
+      <div class="tpl">
+        <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1520975958225-5c5c6f43a3f5?auto=format&fit=crop&w=1600&q=70');"></div>
+        <div class="cap">
+          <strong>Online Store</strong>
+          <span>Products + conversion flow.</span>
+        </div>
       </div>
-      <div class="card">
-        <h3>Conversion path</h3>
-        <p>Every page pushes toward “Start” without feeling pushy.</p>
+
+      <div class="tpl">
+        <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=70');"></div>
+        <div class="cap">
+          <strong>Premium Brand</strong>
+          <span>Platform feel + proof pages.</span>
+        </div>
+      </div>
+
+      <div class="tpl">
+        <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=70');"></div>
+        <div class="cap">
+          <strong>Creative Studio</strong>
+          <span>Services + work + pricing.</span>
+        </div>
       </div>
     </div>
 
-    <div class="btn-row">
-      <a class="btn" href="services.html">Explore Services</a>
-      <a class="btn ghost" href="about.html">Meet the Studio</a>
+    <div class="btn-row" style="justify-content:flex-start;">
+      <a class="btn accent" href="work.html">View Case Studies</a>
+      <a class="btn ghost" href="services.html">Services</a>
+    </div>
+  </div>
+</section>
+
+<section id="domains" class="section color-b reveal">
+  <div class="container" style="text-align:left;">
+    <h2>Domains</h2>
+    <p class="sub" style="margin-left:0;">
+      Premium sites sell trust. A clean domain + launch support makes the whole brand feel established.
+    </p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Search a domain</h3>
+        <p>Enter a name idea and we’ll help you pick something brandable.</p>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+          <input class="input" placeholder="yourbrand.com" style="flex:1;min-width:220px;" />
+          <a class="btn accent" href="contact.html">Search</a>
+        </div>
+        <div class="helper" style="margin-top:10px;">Demo UI — real domain setup happens in the client build.</div>
+      </div>
+
+      <div class="card">
+        <h3>Connect an existing domain</h3>
+        <p>If you already bought one, we can connect it and launch your site clean.</p>
+        <ul class="ul">
+          <li>DNS steps</li>
+          <li>Launch checklist</li>
+          <li>Final QA</li>
+        </ul>
+        <div class="btn-row" style="justify-content:flex-start;">
+          <a class="btn" href="contact.html">Connect My Domain</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="seo" class="section color-c reveal">
+  <div class="container" style="text-align:left;">
+    <h2>SEO tools</h2>
+    <p class="sub" style="margin-left:0;">
+      Premium packages include structure that helps you rank: clean sections, headings, and speed-focused layouts.
+    </p>
+
+    <div class="grid cols-3">
+      <div class="card"><h3>Clean structure</h3><p>Headings + sections that make sense for users and search engines.</p></div>
+      <div class="card"><h3>Local SEO ready</h3><p>Perfect for service businesses with a location focus.</p></div>
+      <div class="card"><h3>Speed rules</h3><p>Fast pages convert better and reduce bounce.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ads" class="section color-d reveal">
+  <div class="container" style="text-align:left;">
+    <h2>Run ads</h2>
+    <p class="sub" style="margin-left:0;">
+      Ads need a landing page that matches the offer. Premium includes pages that are built to convert traffic.
+    </p>
+
+    <div class="grid cols-3">
+      <div class="card"><h3>Landing pages</h3><p>Focused layout with a clear CTA and proof blocks.</p></div>
+      <div class="card"><h3>Offer clarity</h3><p>No fluff. Visitors understand value instantly.</p></div>
+      <div class="card"><h3>Lead capture</h3><p>Mobile-friendly form flow (biggest win).</p></div>
+    </div>
+
+    <div class="btn-row" style="justify-content:flex-start;">
+      <a class="btn accent" href="pricing.html">Pricing</a>
+      <a class="btn ghost" href="contact.html">Start</a>
+    </div>
+  </div>
+</section>
+
+<section id="marketing" class="section light reveal">
+  <div class="container" style="text-align:left;">
+    <h2>Marketing</h2>
+    <p class="sub" style="margin-left:0;">
+      Premium sites show depth: email offers, upsells, and brand storytelling sections—like the big platforms.
+    </p>
+
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Email + offers</h3>
+        <p>Collect leads, send offers, and build repeat business.</p>
+        <div class="gallery">
+          <div class="tile span-6" style="background-image:url('https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=70');min-height:240px;"></div>
+          <div class="tile span-6" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=70');min-height:240px;"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Proof + pricing pages</h3>
+        <p>Case studies and pricing layouts justify value and increase closes.</p>
+        <ul class="ul">
+          <li>Case studies (Problem → Solution → Result)</li>
+          <li>Pricing clarity</li>
+          <li>Trust blocks + FAQs</li>
+        </ul>
+        <div class="btn-row" style="justify-content:flex-start;">
+          <a class="btn" href="work.html">See Proof</a>
+          <a class="btn ghost" href="pricing.html">Pricing</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section reveal">
-  <div class="container">
-    <h2>Featured case studies</h2>
-    <p class="sub">A premium website shows receipts. Here’s how we present proof.</p>
+  <div class="container" style="text-align:left;">
+    <h2>Next steps</h2>
+    <p class="sub" style="margin-left:0;">
+      This premium homepage is now “Wix-like.” If you want, we’ll match the rest of Premium pages
+      (services/work/pricing/contact) to this same color-coded platform vibe.
+    </p>
 
-    <div class="grid cols-3">
-      <div class="card">
-        <h3>Helios Dental</h3>
-        <p>New flow + trust sections increased booking intent and call volume.</p>
-      </div>
-      <div class="card">
-        <h3>Atlas Fitness</h3>
-        <p>Pricing clarity + landing polish improved membership inquiries.</p>
-      </div>
-      <div class="card">
-        <h3>Bluewave Law</h3>
-        <p>Authority layout + premium design improved consultation leads.</p>
-      </div>
-    </div>
-
-    <div class="btn-row">
-      <a class="btn accent" href="work.html">View All Case Studies</a>
-      <a class="btn ghost" href="pricing.html">Pricing</a>
-    </div>
-  </div>
-</section>
-
-<section class="section light reveal">
-  <div class="container">
-    <h2>FAQ</h2>
-    <p class="sub">Premium includes deeper client education: fewer questions, faster closes.</p>
-
-    <div class="faq">
-      <div class="faq-item">
-        <div class="faq-q">What makes Premium different? <span>+</span></div>
-        <div class="faq-a">Premium is a full system: multiple pages, consistent components, proof pages, and pricing clarity.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can you match a reference site? <span>+</span></div>
-        <div class="faq-a">Yes. We can match the vibe while keeping your brand unique and the build fast.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do you help with domain + launch? <span>+</span></div>
-        <div class="faq-a">Yes. Premium projects include launch guidance and best practices.</div>
-      </div>
-    </div>
-
-    <div class="btn-row">
-      <a class="btn" href="contact.html">Start a Project</a>
-      <a class="btn ghost" href="services.html">What’s Included</a>
+    <div class="btn-row" style="justify-content:flex-start;">
+      <a class="btn accent" href="services.html">Services</a>
+      <a class="btn ghost" href="work.html">Case Studies</a>
+      <a class="btn ghost" href="contact.html">Start</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Nova Platform Studio • Demo by NewGen</p>
+  <p>&copy; 2025 Nova Platform • Demo by NewGen</p>
 </footer>
 
 <script src="../script.js"></script>
