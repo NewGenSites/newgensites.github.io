@@ -4,32 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Start • Premium Demo</title>
-  <meta name="description" content="Premium contact flow with qualification form + FAQ." />
+  <meta name="description" content="Premium intake page in Wix-like platform style." />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body>
+<body style="--accent:#7c3aed;">
 
 <nav class="navbar">
   <div class="nav-inner">
-    <div class="logo">Nova Platform Studio</div>
+    <div class="logo">
+      <span class="logo-badge" style="background:#7c3aed;">NP</span>
+      Nova Platform
+    </div>
+
     <button class="nav-toggle" aria-label="Open menu">Menu</button>
+
     <ul class="nav-links">
-      <li><a href="../index.html">← Back</a></li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="work.html">Case Studies</a></li>
-      <li><a href="about.html">About</a></li>
+      <li class="dd">
+        <a href="index.html#products">Products ▾</a>
+        <div class="dd-panel">
+          <div class="dd-grid">
+            <a class="dd-item" href="index.html#templates"><strong>Templates</strong><span>Browse multiple styles.</span></a>
+            <a class="dd-item" href="index.html#domains"><strong>Domains</strong><span>Buy or connect one.</span></a>
+            <a class="dd-item" href="index.html#seo"><strong>SEO</strong><span>Show up on Google.</span></a>
+            <a class="dd-item" href="index.html#marketing"><strong>Marketing</strong><span>Grow repeat business.</span></a>
+          </div>
+        </div>
+      </li>
+
+      <li class="dd">
+        <a href="index.html#solutions">Solutions ▾</a>
+        <div class="dd-panel">
+          <div class="dd-grid">
+            <a class="dd-item" href="services.html"><strong>Services</strong><span>What’s included.</span></a>
+            <a class="dd-item" href="work.html"><strong>Case Studies</strong><span>Proof pages.</span></a>
+            <a class="dd-item" href="pricing.html"><strong>Pricing</strong><span>Value clarity.</span></a>
+            <a class="dd-item" href="contact.html"><strong>Start</strong><span>Project intake.</span></a>
+          </div>
+        </div>
+      </li>
+
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="contact.html" class="btn small accent">Start</a></li>
+      <li><a href="work.html">Templates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="../index.html">← Back</a></li>
     </ul>
+
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a class="iconbtn" href="#" aria-label="Language">🌐 EN</a>
+      <a class="iconbtn" href="pricing.html">Pricing</a>
+      <a class="btn small accent" href="contact.html">Get Started</a>
+    </div>
   </div>
 </nav>
 
 <header class="hero reveal" style="padding-bottom:40px;">
-  <div class="container hero-surface">
+  <div class="container hero-surface" style="background:radial-gradient(1200px 700px at 30% 0%, #f2eaff, #ffffff);">
     <div class="kicker">Premium intake</div>
     <h1>Start a project</h1>
-    <p>This is the premium close: better form, better trust, better flow.</p>
+    <p>
+      This is how premium closes: a clean intake flow, strong clarity, and a form that feels professional.
+    </p>
 
     <div class="btn-row">
       <a class="btn accent" href="mailto:hello@example.com">Email</a>
@@ -39,10 +73,10 @@
   </div>
 </header>
 
-<section class="section light reveal">
-  <div class="container">
+<section class="section color-a reveal">
+  <div class="container" style="text-align:left;">
     <h2>Project details</h2>
-    <p class="sub">Demo form (frontend). Next step is connecting it to email + analytics tracking.</p>
+    <p class="sub" style="margin-left:0;">Demo form (front-end). Next step is connecting to email + analytics tracking.</p>
 
     <form class="form">
       <div class="form-row">
@@ -59,26 +93,38 @@
       <button class="btn accent" type="button">Submit (Demo)</button>
       <div class="helper">Replace the email/phone above with yours when you’re ready.</div>
     </form>
+  </div>
+</section>
 
-    <div class="faq" style="margin-top:28px;">
+<section class="section color-b reveal">
+  <div class="container" style="text-align:left;">
+    <h2>FAQ</h2>
+    <p class="sub" style="margin-left:0;">Premium clients want clarity before they buy.</p>
+
+    <div class="faq">
       <div class="faq-item">
         <div class="faq-q">How fast can you launch? <span>+</span></div>
-        <div class="faq-a">Basic can launch fast. Premium depends on pages, content, and approvals—but we keep it organized.</div>
+        <div class="faq-a">It depends on pages, content, and approvals, but we keep the process organized and fast.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Can we match Wix-level polish? <span>+</span></div>
-        <div class="faq-a">Yes—Premium is designed to feel like a platform, with consistent structure and proof pages.</div>
+        <div class="faq-q">Can you match a reference site vibe? <span>+</span></div>
+        <div class="faq-a">Yes. Premium is built to match “platform-level” quality while keeping it brand-unique.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Do you help with domain + hosting? <span>+</span></div>
-        <div class="faq-a">Yes. We can guide setup and deployment so your launch is smooth.</div>
+        <div class="faq-q">Do you help with domain + launch? <span>+</span></div>
+        <div class="faq-a">Yes. We can guide domain connection and final launch QA.</div>
       </div>
+    </div>
+
+    <div class="btn-row" style="justify-content:flex-start;">
+      <a class="btn" href="pricing.html">See Pricing</a>
+      <a class="btn ghost" href="work.html">See Proof</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Nova Platform Studio • Demo by NewGen</p>
+  <p>&copy; 2025 Nova Platform • Demo by NewGen</p>
 </footer>
 
 <script src="../script.js"></script>
