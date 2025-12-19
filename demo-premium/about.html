@@ -4,80 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About • Premium Demo</title>
-  <meta name="description" content="Premium about page that builds trust and explains the studio approach." />
+  <meta name="description" content="Premium about page in Wix-like platform style." />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body>
+<body style="--accent:#7c3aed;">
 
 <nav class="navbar">
   <div class="nav-inner">
-    <div class="logo">Nova Platform Studio</div>
+    <div class="logo">
+      <span class="logo-badge" style="background:#7c3aed;">NP</span>
+      Nova Platform
+    </div>
+
     <button class="nav-toggle" aria-label="Open menu">Menu</button>
+
     <ul class="nav-links">
-      <li><a href="../index.html">← Back</a></li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="work.html">Case Studies</a></li>
-      <li><a href="about.html">About</a></li>
+      <li class="dd">
+        <a href="index.html#products">Products ▾</a>
+        <div class="dd-panel">
+          <div class="dd-grid">
+            <a class="dd-item" href="index.html#templates"><strong>Templates</strong><span>Browse multiple styles.</span></a>
+            <a class="dd-item" href="index.html#domains"><strong>Domains</strong><span>Buy or connect one.</span></a>
+            <a class="dd-item" href="index.html#seo"><strong>SEO</strong><span>Show up on Google.</span></a>
+            <a class="dd-item" href="index.html#marketing"><strong>Marketing</strong><span>Grow repeat business.</span></a>
+          </div>
+        </div>
+      </li>
+
+      <li class="dd">
+        <a href="index.html#solutions">Solutions ▾</a>
+        <div class="dd-panel">
+          <div class="dd-grid">
+            <a class="dd-item" href="services.html"><strong>Services</strong><span>What’s included.</span></a>
+            <a class="dd-item" href="work.html"><strong>Case Studies</strong><span>Proof pages.</span></a>
+            <a class="dd-item" href="pricing.html"><strong>Pricing</strong><span>Value clarity.</span></a>
+            <a class="dd-item" href="contact.html"><strong>Start</strong><span>Project intake.</span></a>
+          </div>
+        </div>
+      </li>
+
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="contact.html" class="btn small accent">Start</a></li>
+      <li><a href="work.html">Templates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="../index.html">← Back</a></li>
     </ul>
+
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a class="iconbtn" href="#" aria-label="Language">🌐 EN</a>
+      <a class="iconbtn" href="work.html">Proof</a>
+      <a class="btn small accent" href="contact.html">Get Started</a>
+    </div>
   </div>
 </nav>
 
 <header class="hero reveal" style="padding-bottom:40px;">
-  <div class="container hero-surface">
-    <div class="kicker">Brand trust</div>
-    <h1>About the studio</h1>
+  <div class="container hero-surface" style="background:radial-gradient(1200px 700px at 30% 0%, #f2eaff, #ffffff);">
+    <div class="kicker">About • trust builder</div>
+    <h1>People buy from brands they trust.</h1>
     <p>
-      Premium packages include a real About page because it improves close rates.
-      People buy from brands they trust.
+      Premium pages aren’t just “extra.” They increase close rates.
+      This About page explains the approach and makes the business feel real.
     </p>
+    <div class="btn-row">
+      <a class="btn accent" href="contact.html">Start a Project</a>
+      <a class="btn ghost" href="services.html">Services</a>
+    </div>
   </div>
 </header>
 
-<section class="section light reveal">
-  <div class="container">
+<section class="section color-a reveal">
+  <div class="container" style="text-align:left;">
     <h2>Our approach</h2>
-    <p class="sub">Clarity first. Then design. Then conversion.</p>
+    <p class="sub" style="margin-left:0;">Clarity first. Then design. Then conversion.</p>
 
     <div class="grid cols-3">
-      <div class="card">
-        <h3>Strategy</h3>
-        <p>We clarify the offer, audience, and what you want visitors to do.</p>
-      </div>
-      <div class="card">
-        <h3>System</h3>
-        <p>We build a repeatable design system so every page feels premium.</p>
-      </div>
-      <div class="card">
-        <h3>Launch</h3>
-        <p>We deploy, QA, and make sure the site performs on mobile.</p>
-      </div>
+      <div class="card"><h3>Strategy</h3><p>We define the offer, audience, and what the site needs to accomplish.</p></div>
+      <div class="card"><h3>System</h3><p>We build a consistent design system so every page feels premium.</p></div>
+      <div class="card"><h3>Launch</h3><p>We QA on mobile, test links/forms, and deploy clean.</p></div>
     </div>
 
-    <div class="btn-row">
-      <a class="btn accent" href="contact.html">Start a Project</a>
-      <a class="btn ghost" href="work.html">See Proof</a>
+    <div class="gallery">
+      <div class="tile span-6" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=70');"></div>
+      <div class="tile span-6" style="background-image:url('https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=70');"></div>
     </div>
   </div>
 </section>
 
-<section class="section reveal">
-  <div class="container">
+<section class="section color-b reveal">
+  <div class="container" style="text-align:left;">
     <h2>What premium clients care about</h2>
-    <p class="sub">This is what your website communicates without saying a word.</p>
+    <p class="sub" style="margin-left:0;">The site should communicate this instantly.</p>
 
     <div class="grid cols-3">
-      <div class="card"><h3>Trust</h3><p>Clear structure + proof pages reduce skepticism.</p></div>
-      <div class="card"><h3>Quality</h3><p>Spacing, typography, and consistency make it feel expensive.</p></div>
-      <div class="card"><h3>Clarity</h3><p>Users know what to do next—every page.</p></div>
+      <div class="card"><h3>Trust</h3><p>Proof pages + consistent design reduces skepticism.</p></div>
+      <div class="card"><h3>Quality</h3><p>Spacing, typography, and visuals make it feel expensive.</p></div>
+      <div class="card"><h3>Clarity</h3><p>Visitors always know what to do next.</p></div>
+    </div>
+
+    <div class="btn-row" style="justify-content:flex-start;">
+      <a class="btn" href="work.html">See Proof</a>
+      <a class="btn ghost" href="pricing.html">Pricing</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Nova Platform Studio • Demo by NewGen</p>
+  <p>&copy; 2025 Nova Platform • Demo by NewGen</p>
 </footer>
 
 <script src="../script.js"></script>
