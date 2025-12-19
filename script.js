@@ -7,7 +7,7 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.15 });
 reveals.forEach(el => observer.observe(el));
 
-// Mobile nav
+// Mobile nav (generic)
 const toggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 if (toggle && navLinks) {
@@ -16,8 +16,16 @@ if (toggle && navLinks) {
 
 // FAQ accordion
 document.querySelectorAll(".faq-q").forEach(q => {
-  q.addEventListener("click", () => {
-    const item = q.closest(".faq-item");
-    item.classList.toggle("open");
+  q.addEventListener("click", () => q.closest(".faq-item").classList.toggle("open"));
+});
+
+// Mobile dropdown support
+document.querySelectorAll(".dd > a").forEach(a => {
+  a.addEventListener("click", (e) => {
+    const dd = a.closest(".dd");
+    if (window.matchMedia("(max-width: 860px)").matches) {
+      e.preventDefault();
+      dd.classList.toggle("open");
+    }
   });
 });
