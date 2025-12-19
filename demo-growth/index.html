@@ -3,87 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Growth Demo • Streetwear Brand</title>
-  <meta name="description" content="Growth demo: streetwear brand with product grid and multi-page navigation." />
+  <title>Growth Demo • Verified-Style Store</title>
+  <meta name="description" content="Growth demo: store-like layout with sale banner, search bar, cart UI, and track order page." />
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-inner">
-    <div class="logo">SEVEN&CO</div>
-    <button class="nav-toggle" aria-label="Open menu">Menu</button>
-    <ul class="nav-links">
-      <li><a href="../index.html">← Back</a></li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Shop</a></li>
-      <li><a href="contact.html" class="btn small accent">Support</a></li>
-    </ul>
+<div class="top-banner">
+  <div class="marquee">
+    <span>
+      CHRISTMAS SALE — 25% OFF NO CODE NEEDED • CHRISTMAS SALE — 25% OFF NO CODE NEEDED • CHRISTMAS SALE — 25% OFF NO CODE NEEDED •
+      CHRISTMAS SALE — 25% OFF NO CODE NEEDED • CHRISTMAS SALE — 25% OFF NO CODE NEEDED • CHRISTMAS SALE — 25% OFF NO CODE NEEDED •
+    </span>
   </div>
-</nav>
+</div>
 
-<header class="hero reveal" style="padding-bottom:36px;">
-  <div class="container hero-image" style="background-image:url('https://images.unsplash.com/photo-1520975958225-5c5c6f43a3f5?auto=format&fit=crop&w=1800&q=70');background-size:cover;background-position:center;">
-    <div class="overlay"></div>
-    <div class="content">
-      <div class="kicker" style="color:rgba(255,255,255,.85);">Growth package demo • 3 pages</div>
-      <h1>Streetwear that actually looks premium online.</h1>
-      <p>More structure, more visuals, and more conversion flow: Home + Shop + Support.</p>
-      <div class="btn-row" style="justify-content:flex-start;">
-        <a class="btn accent" href="services.html">Shop New Drops</a>
-        <a class="btn ghost" href="contact.html" style="border-color:rgba(255,255,255,.3);color:#fff;">Contact</a>
+<header class="storebar">
+  <div class="store-inner">
+    <div class="store-logo">
+      <span class="mark">V</span>
+      Verified-Style
+    </div>
+
+    <ul class="store-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Shop All</a></li>
+      <li><a href="track.html">Track Your Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="../index.html">← Back</a></li>
+    </ul>
+
+    <div class="store-actions">
+      <div class="search">
+        <span>🔍</span>
+        <input placeholder="Search products…" />
       </div>
-      <div class="badges" style="justify-content:flex-start;">
-        <div class="pill">Product grid</div>
-        <div class="pill">Brand story</div>
-        <div class="pill">FAQ accordion</div>
-      </div>
+      <a class="iconbtn" href="contact.html">Account</a>
+      <a class="iconbtn" href="services.html">Cart <span class="badge">0</span></a>
     </div>
   </div>
 </header>
 
-<section class="section light reveal">
+<section class="section reveal" style="padding-top:48px;">
   <div class="container">
-    <h2>Why this is “Growth”</h2>
-    <p class="sub">This package looks like a real brand site: navigation, product presentation, and customer trust.</p>
-
-    <div class="grid cols-3">
-      <div class="card"><h3>Multi-page nav</h3><p>Customers can browse, trust, and buy without confusion.</p></div>
-      <div class="card"><h3>Product presentation</h3><p>Grids + consistent spacing make it feel legit.</p></div>
-      <div class="card"><h3>Support flow</h3><p>FAQ + contact layout reduces abandoned purchases.</p></div>
-    </div>
-
-    <div class="btn-row">
-      <a class="btn" href="services.html">Open Shop</a>
-      <a class="btn ghost" href="contact.html">Support</a>
+    <div class="hero-image"
+      style="background-image:url('https://images.unsplash.com/photo-1520975958225-5c5c6f43a3f5?auto=format&fit=crop&w=1800&q=70');background-size:cover;background-position:center;">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="kicker" style="color:rgba(255,255,255,.85);">Growth package demo • store layout • banner + search + cart</div>
+        <h1>Clean storefront. Real brand feel.</h1>
+        <p>Home + Shop All + Track Your Order + Contact. This is what “Growth” looks like for online brands.</p>
+        <div class="btn-row" style="justify-content:flex-start;">
+          <a class="btn accent" href="services.html">Shop All</a>
+          <a class="btn ghost" href="track.html" style="border-color:rgba(255,255,255,.3);color:#fff;">Track Order</a>
+          <a class="btn ghost" href="contact.html" style="border-color:rgba(255,255,255,.3);color:#fff;">Contact</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section reveal">
+<section class="section light reveal">
   <div class="container">
-    <h2>FAQ</h2>
-    <p class="sub">Tap questions (interactive = higher quality feel).</p>
+    <h2>Why this feels real</h2>
+    <p class="sub">Store UI + product grid + navigation = “legit” instantly.</p>
 
-    <div class="faq">
-      <div class="faq-item">
-        <div class="faq-q">How long does shipping take? <span>+</span></div>
-        <div class="faq-a">Domestic orders usually ship in 2–5 business days.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do you accept returns? <span>+</span></div>
-        <div class="faq-a">Yes, within 14 days if unworn and in original packaging.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do you restock sold-out items? <span>+</span></div>
-        <div class="faq-a">Limited drops. Restocks are rare — join the email list.</div>
-      </div>
+    <div class="grid cols-3">
+      <div class="card"><h3>Sale banner</h3><p>Immediate urgency + information without clutter.</p></div>
+      <div class="card"><h3>Search + cart UI</h3><p>Feels like a real commerce brand, even as a demo.</p></div>
+      <div class="card"><h3>Track order page</h3><p>Support flow that reduces customer friction.</p></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 SEVEN&CO • Demo by NewGen</p>
+  <p>&copy; 2025 Growth Demo • Built by NewGen</p>
 </footer>
 
 <script src="../script.js"></script>
