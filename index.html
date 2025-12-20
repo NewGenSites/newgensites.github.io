@@ -206,17 +206,55 @@
         <div class="helper" id="domain-search-status" style="margin-top:10px;" aria-live="polite">
           Enter a full domain (like <strong>yourbrand.com</strong>) to see if it’s available.
         </div>
+        <div class="helper" id="domain-purchase-options" style="margin-top:14px;display:none;">
+          <strong>Purchase options</strong>
+          <div class="btn-row start" id="domain-purchase-links" style="margin-top:10px;flex-wrap:wrap;"></div>
+          <span style="display:block;margin-top:8px;color:#64748b;">Links open in a new tab so you can complete checkout.</span>
+        </div>
         <script>
           (() => {
             // DOMAIN SEARCH START
             const input = document.getElementById("domain-search-input");
             const button = document.getElementById("domain-search-button");
             const status = document.getElementById("domain-search-status");
+            const purchaseOptions = document.getElementById("domain-purchase-options");
+            const purchaseLinks = document.getElementById("domain-purchase-links");
             const WORKER_BASE_URL = "https://<YOUR_WORKER_URL>";
 
             const setStatus = (message, tone = "inherit") => {
               status.style.color = tone;
               status.innerHTML = message;
+            };
+
+            const setPurchaseOptions = (domain) => {
+              if (!domain) {
+                purchaseOptions.style.display = "none";
+                purchaseLinks.innerHTML = "";
+                return;
+              }
+
+              const options = [
+                {
+                  label: "Namecheap",
+                  url: `https://www.namecheap.com/domains/registration/results/?domain=${encodeURIComponent(domain)}`,
+                },
+                {
+                  label: "Porkbun",
+                  url: `https://porkbun.com/checkout/search?q=${encodeURIComponent(domain)}`,
+                },
+                {
+                  label: "Squarespace Domains",
+                  url: `https://domains.squarespace.com/domain-search/results?query=${encodeURIComponent(domain)}`,
+                },
+              ];
+
+              purchaseLinks.innerHTML = options
+                .map(
+                  (option) =>
+                    `<a class="btn ghost" href="${option.url}" target="_blank" rel="noopener noreferrer">${option.label}</a>`
+                )
+                .join("");
+              purchaseOptions.style.display = "block";
             };
 
             const normalizeDomain = (value) =>
@@ -238,12 +276,14 @@
               const domain = normalizeDomain(input.value);
               if (!domain || !isValidDomain(domain)) {
                 setStatus("⚠️ Invalid domain", "#b45309");
+                setPurchaseOptions(null);
                 return;
               }
 
               button.disabled = true;
               button.textContent = "Checking...";
               setStatus("Checking availability...", "#0f172a");
+              setPurchaseOptions(null);
 
               try {
                 const response = await fetch(`${WORKER_BASE_URL}/check-domain?domain=${encodeURIComponent(domain)}`, {
@@ -252,23 +292,28 @@
 
                 if (response.status === 400) {
                   setStatus("⚠️ Invalid domain", "#b45309");
+                  setPurchaseOptions(null);
                   return;
                 }
 
                 if (!response.ok) {
                   setStatus("We couldn’t verify that domain right now. Please try again in a moment.", "#b45309");
+                  setPurchaseOptions(null);
                   return;
                 }
 
                 const data = await response.json();
                 if (data.available) {
                   setStatus("✅ Available", "#15803d");
+                  setPurchaseOptions(domain);
                   return;
                 }
 
                 setStatus("❌ Already registered", "#b91c1c");
+                setPurchaseOptions(null);
               } catch (error) {
                 setStatus("We couldn’t reach the domain lookup service. Please try again later.", "#b45309");
+                setPurchaseOptions(null);
               } finally {
                 button.disabled = false;
                 button.textContent = "Check";
