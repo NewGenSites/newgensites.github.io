@@ -1,0 +1,7 @@
+{
+  "name": "newgensites",
+  "private": true,
+  "scripts": {
+    "test": "node tests/link-check.js"
+  }
+}
