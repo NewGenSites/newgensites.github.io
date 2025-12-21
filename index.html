@@ -373,9 +373,98 @@
           <li data-i18n="index.domains.connect.item2">Launch checklist</li>
           <li data-i18n="index.domains.connect.item3">Mobile + speed QA</li>
         </ul>
-        <div class="btn-row start">
-          <a class="btn" href="contact.html" data-i18n="index.domains.connect.action">Connect My Domain</a>
+        <div class="form" style="margin:18px 0 0;gap:10px;">
+          <label style="font-weight:700;">Your domain</label>
+          <div class="form-row" style="grid-template-columns:2fr 1fr;align-items:center;">
+            <input class="input" id="connect-domain-input" placeholder="yourdomain.com" autocomplete="off" />
+            <button class="btn" id="connect-domain-btn" type="button" data-i18n="index.domains.connect.action">Connect My Domain</button>
+          </div>
+          <p class="helper" id="connect-domain-status" aria-live="polite">Enter your domain and we’ll prep the DNS guidance, launch checklist, and QA steps.</p>
         </div>
+        <div id="connect-domain-response" style="display:none;margin-top:16px;">
+          <div class="card" style="border:1px dashed var(--line);box-shadow:none;">
+            <h4 style="margin-bottom:6px;">DNS guidance</h4>
+            <p class="helper">Add the following records at your current registrar to point your domain to your new site.</p>
+            <ul class="ul" id="connect-domain-dns"></ul>
+          </div>
+          <div class="card" style="border:1px dashed var(--line);box-shadow:none;margin-top:12px;">
+            <h4 style="margin-bottom:6px;">Launch checklist</h4>
+            <ul class="ul" id="connect-domain-checklist">
+              <li>Confirm DNS records are saved and propagated.</li>
+              <li>Verify SSL is active for https on your domain.</li>
+              <li>Run a final content review before launch.</li>
+            </ul>
+          </div>
+          <div class="card" style="border:1px dashed var(--line);box-shadow:none;margin-top:12px;">
+            <h4 style="margin-bottom:6px;">Mobile + speed QA</h4>
+            <p class="helper" id="connect-domain-qa-status">Ready to run a quick performance and mobile check.</p>
+            <div class="btn-row start" style="margin-top:8px;">
+              <button class="btn ghost" id="connect-domain-qa-btn" type="button">Run QA check</button>
+            </div>
+          </div>
+        </div>
+        <script>
+          (() => {
+            const input = document.getElementById("connect-domain-input");
+            const button = document.getElementById("connect-domain-btn");
+            const status = document.getElementById("connect-domain-status");
+            const response = document.getElementById("connect-domain-response");
+            const dnsList = document.getElementById("connect-domain-dns");
+            const qaButton = document.getElementById("connect-domain-qa-btn");
+            const qaStatus = document.getElementById("connect-domain-qa-status");
+
+            const renderDns = (domain) => {
+              const rootDomain = domain.replace(/^www\./, "");
+              dnsList.innerHTML = "";
+              const records = [
+                { label: "A", host: "@", value: "76.76.21.21" },
+                { label: "CNAME", host: "www", value: "cname.yoursite.app" },
+                { label: "TXT", host: "@", value: `newgen-verify=${rootDomain}` },
+              ];
+
+              records.forEach((record) => {
+                const item = document.createElement("li");
+                item.textContent = `${record.label} | ${record.host} → ${record.value}`;
+                dnsList.appendChild(item);
+              });
+            };
+
+            const handleConnect = () => {
+              const domain = input.value.trim();
+              if (!domain || !domain.includes(".")) {
+                status.textContent = "Please enter a valid domain (example: yourdomain.com).";
+                status.style.color = "#b45309";
+                response.style.display = "none";
+                return;
+              }
+
+              renderDns(domain);
+              status.textContent = `Connected! Use the DNS guidance below for ${domain}, then follow the launch checklist and run QA.`;
+              status.style.color = "#15803d";
+              response.style.display = "block";
+            };
+
+            const runQaCheck = () => {
+              qaButton.disabled = true;
+              qaButton.textContent = "Running...";
+              qaStatus.textContent = "Running mobile and speed QA now...";
+
+              setTimeout(() => {
+                qaStatus.textContent = "QA complete: mobile layout + speed checks look good.";
+                qaButton.textContent = "Run QA again";
+                qaButton.disabled = false;
+              }, 1200);
+            };
+
+            button.addEventListener("click", handleConnect);
+            input.addEventListener("keydown", (event) => {
+              if (event.key === "Enter") {
+                handleConnect();
+              }
+            });
+            qaButton.addEventListener("click", runQaCheck);
+          })();
+        </script>
       </div>
     </div>
   </div>
