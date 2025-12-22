@@ -63,7 +63,7 @@ document.querySelectorAll("[data-booking-widget]").forEach(widget => {
   const selectedLabel = widget.querySelector("[data-booking-selected-date]");
   if (!dateButtons.length || !hoursPanel) return;
 
-  let activeDate = null;
+  let activeButton = null;
 
   const setHoursVisibility = (isVisible, dateText = "") => {
     hoursPanel.hidden = !isVisible;
@@ -78,16 +78,16 @@ document.querySelectorAll("[data-booking-widget]").forEach(widget => {
   dateButtons.forEach(button => {
     button.addEventListener("click", () => {
       const dateValue = button.dataset.bookingDate || button.textContent.trim();
-      if (activeDate === dateValue) {
+      if (activeButton === button) {
         button.classList.remove("is-selected");
-        activeDate = null;
+        activeButton = null;
         setHoursVisibility(false);
         return;
       }
 
       dateButtons.forEach(btn => btn.classList.remove("is-selected"));
       button.classList.add("is-selected");
-      activeDate = dateValue;
+      activeButton = button;
       setHoursVisibility(true, dateValue);
     });
   });
