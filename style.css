@@ -224,6 +224,9 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:26px 0}
 [data-booking-widget]{
   min-width:0;
 }
+[data-booking-widget].booking-hours-open{
+  margin-right:18px;
+}
 [data-booking-hours]{
   position:static;
   margin-top:12px;
@@ -272,6 +275,9 @@ footer{padding:28px 20px;text-align:center;color:#777;border-top:1px solid var(-
   .store-inner{grid-template-columns:1fr;gap:10px}
   .store-actions{justify-content:flex-start;flex-wrap:wrap}
   .search{min-width:0;width:100%}
+  [data-booking-widget].booking-hours-open{
+    margin-right:0;
+  }
 }
 @media (max-width:860px){
   .cols-2,.cols-3{grid-template-columns:1fr}
