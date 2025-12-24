@@ -1,39 +1,36 @@
-// Link checker test: scans HTML files for local href targets and ensures referenced files exist.
-// Run via `npm test` or `node tests/link-check.js` before publishing changes.
-
+// Link checker test: verifies local href targets in HTML files resolve to existing files.
 const fs = require('fs');
 const path = require('path');
 
 const rootDir = process.cwd();
+const htmlFiles = [];
+const missingLinks = [];
 
-function collectHtmlFiles(dirPath, files = []) {
-  for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
+function collectHtmlFiles(dirPath) {
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+  for (const entry of entries) {
     if (entry.name.startsWith('.')) {
       continue;
     }
-
     const fullPath = path.join(dirPath, entry.name);
-
     if (entry.isDirectory()) {
       if (entry.name === 'node_modules') {
         continue;
       }
-      collectHtmlFiles(fullPath, files);
+      collectHtmlFiles(fullPath);
       continue;
     }
-
     if (entry.isFile() && entry.name.endsWith('.html')) {
-      files.push(fullPath);
+      htmlFiles.push(fullPath);
     }
   }
-
-  return files;
 }
 
 function isLocalHref(href) {
   const trimmed = href.trim();
-  if (!trimmed) return false;
-
+  if (!trimmed) {
+    return false;
+  }
   const lower = trimmed.toLowerCase();
   if (
     lower.startsWith('http://') ||
@@ -45,62 +42,51 @@ function isLocalHref(href) {
   ) {
     return false;
   }
-
-  return !lower.startsWith('#');
+  if (lower.startsWith('#')) {
+    return false;
+  }
+  return true;
 }
 
 function resolveTarget(sourceFile, href) {
   const cleaned = href.split('#')[0].split('?')[0].trim();
-  if (!cleaned) return null;
-
-  return cleaned.startsWith('/')
-    ? path.join(rootDir, cleaned)
-    : path.resolve(path.dirname(sourceFile), cleaned);
+  if (!cleaned) {
+    return null;
+  }
+  if (cleaned.startsWith('/')) {
+    return path.join(rootDir, cleaned);
+  }
+  return path.resolve(path.dirname(sourceFile), cleaned);
 }
 
-function extractLocalHrefs(contents) {
-  const hrefRegex = /href\s*=\s*["']([^"']+)["']/gi;
-  const hrefs = [];
-  let match;
+collectHtmlFiles(rootDir);
+
+const hrefRegex = /href\s*=\s*["']([^"']+)["']/gi;
+
+for (const htmlFile of htmlFiles) {
+  const contents = fs.readFileSync(htmlFile, 'utf8');
+  let match = null;
   while ((match = hrefRegex.exec(contents)) !== null) {
     const href = match[1];
-    if (isLocalHref(href)) {
-      hrefs.push(href);
+    if (!isLocalHref(href)) {
+      continue;
+    }
+    const targetPath = resolveTarget(htmlFile, href);
+    if (!targetPath) {
+      continue;
+    }
+    if (!fs.existsSync(targetPath)) {
+      missingLinks.push({ source: htmlFile, href, target: targetPath });
     }
   }
-  return hrefs;
 }
 
-function main() {
-  const htmlFiles = collectHtmlFiles(rootDir);
-  const missingLinks = [];
-
-  for (const htmlFile of htmlFiles) {
-    const contents = fs.readFileSync(htmlFile, 'utf8');
-
-    for (const href of extractLocalHrefs(contents)) {
-      const targetPath = resolveTarget(htmlFile, href);
-      if (!targetPath) continue;
-
-      if (!fs.existsSync(targetPath)) {
-        missingLinks.push({
-          source: path.relative(rootDir, htmlFile),
-          href,
-          resolved: path.relative(rootDir, targetPath),
-        });
-      }
-    }
+if (missingLinks.length) {
+  console.error('Missing local link targets found:');
+  for (const link of missingLinks) {
+    console.error(`- ${path.relative(rootDir, link.source)} -> ${link.href} (resolved: ${path.relative(rootDir, link.target)})`);
   }
-
-  if (missingLinks.length) {
-    console.error('Missing local link targets found:');
-    for (const link of missingLinks) {
-      console.error(`- ${link.source} -> ${link.href} (resolved: ${link.resolved})`);
-    }
-    process.exit(1);
-  }
-
-  console.log(`Link check passed (${htmlFiles.length} HTML files scanned).`);
+  process.exit(1);
 }
 
-main();
+console.log(`Link check passed (${htmlFiles.length} HTML files scanned).`);
